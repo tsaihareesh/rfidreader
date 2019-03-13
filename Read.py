@@ -73,11 +73,11 @@ while continue_reading:
         uidsSet.add(uidn)
         newBill = demo.generateBill(uidsSet)
         totalAmount = 0
-        for key in newBill:
-            print newBill.get(key)
-            totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
-        print("##################### total bill amount "+str(totalAmount))
-
+        if not (uidn in uidsSet):
+            for key in newBill:
+                print newBill.get(key)
+                totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
+            print("##################### total bill amount "+str(totalAmount))
 
 
         # This is the default key for authentication
