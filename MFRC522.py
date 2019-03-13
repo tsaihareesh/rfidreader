@@ -307,7 +307,7 @@ class MFRC522:
     (status, backData, backLen) = self.MFRC522_ToCard(self.PCD_TRANSCEIVE, buf)
     
     if (status == self.MI_OK) and (backLen == 0x18):
-      print "Size: " + str(backData[0])
+      # print "Size: " + str(backData[0])
       return    backData[0]
     else:
       return 0
@@ -359,8 +359,7 @@ class MFRC522:
     if not(status == self.MI_OK):
       print "Error while reading!"
     i = 0
-    if len(backData) == 16:
-      print "Sector "+str(blockAddr)+" "+str(backData)
+
   
   def MFRC522_Write(self, blockAddr, writeData):
     buff = []
