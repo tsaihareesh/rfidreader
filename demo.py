@@ -1,7 +1,7 @@
 import sys
 
 productInfo = {"S8": "S8,samsung,10,500", "S9": "S9,samsui,10,600"}
-uuidProductMapping = {"89:230:191:90":"S8","249:241:231:94":"S9"}
+uuidProductMapping = {"89:230:191:90":"S8","249:241:231:94":"S9","217:131:52:90":"S9"}
 
 def input():
     uidSet = set()
