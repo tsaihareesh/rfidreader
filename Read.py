@@ -66,11 +66,11 @@ while continue_reading:
     if status == MIFAREReader.MI_OK:
 
         # Print UID
-        # print "Card read UID: %s,%s,%s,%s" % (uid[0], uid[1], uid[2], uid[3])
-        uid = str(uid[0])+":"+str(uid[1])+":"+str(uid[2])+":"+str(uid[3])
+        print "Card read UID: %s,%s,%s,%s" % (uid[0], uid[1], uid[2], uid[3])
+        uidn = str(uid[0])+":"+str(uid[1])+":"+str(uid[2])+":"+str(uid[3])
 
         # if not (uid in uidsSet):
-        uidsSet.add(uid)
+        uidsSet.add(uidn)
         newBill = demo.generateBill(uidsSet)
         totalAmount = 0
         for key in newBill:
