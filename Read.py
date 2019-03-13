@@ -69,14 +69,14 @@ while continue_reading:
         # print "Card read UID: %s,%s,%s,%s" % (uid[0], uid[1], uid[2], uid[3])
         uid = str(uid[0])+":"+str(uid[1])+":"+str(uid[2])+":"+str(uid[3])
 
-        if not (uid in uidsSet):
-            uidsSet.add(uid)
-            newBill = demo.generateBill(uidsSet)
-            totalAmount = 0
-            for key in newBill:
-               print newBill.get(key)
-               totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
-               # print("##################### total bill amount "+str(totalAmount))
+        # if not (uid in uidsSet):
+        uidsSet.add(uid)
+        newBill = demo.generateBill(uidsSet)
+        totalAmount = 0
+        for key in newBill:
+            print newBill.get(key)
+            totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
+        print("##################### total bill amount "+str(totalAmount))
 
 
 
