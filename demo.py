@@ -15,7 +15,7 @@ def input():
 
 
 def generateBill(uidSet):
-    print("----------------Bill No: 987345678998765-------------------")
+    print("----------Bill No: 987345678998765---------")
     print " "
     # item-id,description,price,qty,sku
     bill = {}
