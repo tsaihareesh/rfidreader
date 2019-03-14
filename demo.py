@@ -1,6 +1,6 @@
 import sys
 
-productInfo = {"S8": "S8 - \n \t make : samsung \n \t unit price : 500", "S9": "S9,samsui,10,600","Iphone6s": "Iphone6s,apple,10,600"}
+productInfo = {"S8": "S8,samsung,10,500", "S9": "S9,samsui,10,600","Iphone6s": "Iphone6s,apple,10,600"}
 uuidProductMapping = {"89:230:191:90":"S8","249:241:231:94":"S9","217:131:52:90":"S9","185:77:56:90":"Iphone6s","217:45:180:176":"S9"}
 
 def input():
@@ -24,13 +24,13 @@ def generateBill(uidSet):
             billValue = bill.get(itemId)
             qty = int(getQuantity(billValue)) + 1
             price = int(getPrice(billValue)) * qty
-            itemDetails = itemDetails +","+ str(price)+","+ str(qty)
+            itemDetails =  getBillTag(itemDetails) +","+ str(price)+","+ str(qty)
             bill[itemId] = itemDetails
         else:
             itemDetails = productInfo.get(itemId)
             price = getPrice(itemDetails)
             qty = 1
-            itemDetails = itemDetails +","+ str(price)+","+str(qty)
+            itemDetails = getBillTag(itemDetails) +","+ str(price)+","+str(qty)
             bill[itemId] = itemDetails
     return bill
 
@@ -44,8 +44,8 @@ def getEffectivePrice(itemDetail):
 def getQuantity(bill):
   return bill.split(",")[5]
 
-
-
+def getBillTag(itemDetail):
+    return itemDetail.split(",")[0] + " \n \t make : "+itemDetail.split(",")[1] + " \n \t unit price : "+itemDetail.split(",")[3]
 
 if __name__ == '__main__':
     globals()[sys.argv[1]]()
