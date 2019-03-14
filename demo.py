@@ -23,7 +23,7 @@ def generateBill(uidSet):
             itemDetails = productInfo.get(itemId)
             billValue = bill.get(itemId)
             qty = int(getQuantity(billValue)) + 1
-            price = int(getPrice(billValue)) * qty
+            price = int(getPriceAdd(billValue)) * qty
             itemDetails =  getBillTag(itemDetails) +","+ str(price)+","+ str(qty)
             bill[itemId] = itemDetails
         else:
@@ -36,7 +36,10 @@ def generateBill(uidSet):
 
 
 def getPrice(itemDetail):
-  return itemDetail.split("Price :")[1]
+  return itemDetail.split(",")[3]
+
+def getPriceAdd(itemDetail):
+    return itemDetail.split("Price :")[1]
 
 def getEffectivePrice(itemDetail):
   return itemDetail.split("Price :")[1]
