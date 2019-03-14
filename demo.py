@@ -20,7 +20,6 @@ def generateBill(uidSet):
     # item-id,description,price,qty,sku
     bill = {}
     for value in uidSet:
-        print " "
         itemId = uuidProductMapping.get(value)
         if itemId in bill:
             itemDetails = productInfo.get(itemId)
@@ -51,7 +50,7 @@ def getQuantity(bill):
   return (bill.split("Qty :")[1]).split(" ")[0]
 
 def getBillTag(itemDetail):
-    return " \t "+itemDetail.split(",")[0] + " \n \t make : "+itemDetail.split(",")[1] + " \n \t unit price : "+itemDetail.split(",")[3]
+    return " \t Item:"+itemDetail.split(",")[0] + " \n \t make : "+itemDetail.split(",")[1] + " \n \t unit price : "+itemDetail.split(",")[3]
 
 if __name__ == '__main__':
     globals()[sys.argv[1]]()
