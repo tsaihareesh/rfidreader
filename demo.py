@@ -15,9 +15,12 @@ def input():
 
 
 def generateBill(uidSet):
+    print("----------------Bill No: 987345678998765-------------------")
+    print " "
     # item-id,description,price,qty,sku
     bill = {}
     for value in uidSet:
+        print " "
         itemId = uuidProductMapping.get(value)
         if itemId in bill:
             itemDetails = productInfo.get(itemId)
