@@ -24,7 +24,7 @@ def generateBill(uidSet):
             billValue = bill.get(itemId)
             qty = int(getQuantity(billValue)) + 1
             price = int(getPriceAdd(billValue)) * qty
-            itemDetails =  getBillTag(itemDetails) +","+ str(price)+","+ str(qty)
+            itemDetails =  getBillTag(itemDetails) +"  \n \t Qty :"+ str(qty) + " \n \t Price :"+  str(price)
             bill[itemId] = itemDetails
         else:
             itemDetails = productInfo.get(itemId)
