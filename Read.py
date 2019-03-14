@@ -42,10 +42,11 @@ signal.signal(signal.SIGINT, end_read)
 MIFAREReader = MFRC522.MFRC522()
 
 # Welcome message
+print " "
 print "######## --------- Welcome to Targets Flash Checkout System ---------######## "
 print " "
 #print "Press Ctrl-C to stop."
-print("ModelNo|desc|weight|unitprice|totalprice|qty")
+#print("ModelNo|desc|weight|unitprice|totalprice|qty")
 
 uidsSet = set()
 oldBill = {}
@@ -75,7 +76,8 @@ while continue_reading:
             for key in newBill:
                 print newBill.get(key)
                 totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
-            print("##################### total bill amount "+str(totalAmount))
+            print("----------------------------------------------")
+            print("Total bill amount :"+str(totalAmount))
             print( "        Thanks for Shopping with Target       ")
 
         # This is the default key for authentication
