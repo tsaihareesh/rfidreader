@@ -78,7 +78,10 @@ while continue_reading:
                 totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
             print("----------------------------------------------")
             print("Total bill amount :"+str(totalAmount))
-            print( "        Thanks for Shopping with Target       ")
+            print("----------------------------------------------")
+            print( "Thanks for Shopping with Target       :) ")
+            print("----------------------------------------------")
+            print " "
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
