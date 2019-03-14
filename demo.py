@@ -30,7 +30,7 @@ def generateBill(uidSet):
             itemDetails = productInfo.get(itemId)
             price = getPrice(itemDetails)
             qty = 1
-            itemDetails = getBillTag(itemDetails) +","+ str(price)+","+str(qty)
+            itemDetails = getBillTag(itemDetails) +"  \n \t Qty :"+ str(qty) + " \n \t Price :"+  str(price)
             bill[itemId] = itemDetails
     return bill
 
@@ -39,13 +39,13 @@ def getPrice(itemDetail):
   return itemDetail.split(",")[3]
 
 def getEffectivePrice(itemDetail):
-  return itemDetail.split(",")[4]
+  return itemDetail.split("Price :")[1]
 
 def getQuantity(bill):
   return bill.split(",")[5]
 
 def getBillTag(itemDetail):
-    return itemDetail.split(",")[0] + " \n \t make : "+itemDetail.split(",")[1] + " \n \t unit price : "+itemDetail.split(",")[3]
+    return " \t "itemDetail.split(",")[0] + " \n \t make : "+itemDetail.split(",")[1] + " \n \t unit price : "+itemDetail.split(",")[3]
 
 if __name__ == '__main__':
     globals()[sys.argv[1]]()
