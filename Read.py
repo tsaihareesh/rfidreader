@@ -42,8 +42,9 @@ signal.signal(signal.SIGINT, end_read)
 MIFAREReader = MFRC522.MFRC522()
 
 # Welcome message
-print "Welcome to the MFRC522 data read example"
-print "Press Ctrl-C to stop."
+print "######## --------- Welcome to Targets Flash Checkout System ---------######## "
+print " "
+#print "Press Ctrl-C to stop."
 print("ModelNo|desc|weight|unitprice|totalprice|qty")
 
 uidsSet = set()
@@ -51,8 +52,7 @@ oldBill = {}
 
 # This loop keeps checking for chips. If one is near it will get the UID and authenticate
 while continue_reading:
-    
-    # Scan for cards    
+    # Scan for cards
     (status,TagType) = MIFAREReader.MFRC522_Request(MIFAREReader.PICC_REQIDL)
 
     # If a card is found
@@ -76,7 +76,7 @@ while continue_reading:
                 print newBill.get(key)
                 totalAmount = int(totalAmount) + int(demo.getEffectivePrice(newBill.get(key)))
             print("##################### total bill amount "+str(totalAmount))
-
+            print( "        Thanks for Shopping with Target       ")
 
         # This is the default key for authentication
         key = [0xFF,0xFF,0xFF,0xFF,0xFF,0xFF]
